@@ -1,2 +1,2 @@
-import countChars from './count'
-export { countChars }
+import { count, loadedAt } from './count.js'
+export { count, loadedAt }

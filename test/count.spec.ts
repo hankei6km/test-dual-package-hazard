@@ -1,10 +1,28 @@
-import countChars from '../src/count'
+import { resolve } from 'path/posix'
+import { count, loadedAt } from '../src/count.js'
 
-describe('countChars()', () => {
-  it('should return count of content', async () => {
-    expect(await countChars('test/assets/test1.txt')).toEqual(15)
+describe('count()', () => {
+  it('should count 0, 1, 2, 3...', () => {
+    expect(count()).toEqual(0)
+    expect(count()).toEqual(1)
+    expect(count()).toEqual(2)
+    expect(count()).toEqual(3)
+    expect(count()).toEqual(4)
+    expect(count()).toEqual(5)
   })
-  it('should reject when file not found', async () => {
-    await expect(countChars('test/assets/fail.txt')).rejects.toThrow('ENOENT:')
+})
+
+describe('count()', () => {
+  it('should return the time loaded', async () => {
+    const l = loadedAt().toISOString()
+    const sleep = async (timeout: number) => {
+      await new Promise((resolve) => setTimeout(() => resolve(0), timeout))
+    }
+    await sleep(10)
+    expect(loadedAt().toISOString()).toEqual(l)
+    await sleep(10)
+    expect(loadedAt().toISOString()).toEqual(l)
+    await sleep(10)
+    expect(loadedAt().toISOString()).toEqual(l)
   })
 })
