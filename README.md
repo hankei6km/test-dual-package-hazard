@@ -1,8 +1,6 @@
 # test-dual-package-hazard 
 
-[Dual package hazard](https://nodejs.org/api/packages.html#dual-package-hazard) を体験する。
-
-詳細は[test-dual-package-hazard-main](https://github.com/hankei6km/test-dual-package-hazard-main)。
+詳細は「[Dual package hazard を体験する](https://zenn.dev/hankei6km/articles/test-dual-package-hazard)」を参照してください。
 
 ## ライセンス
 
